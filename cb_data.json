@@ -1,0 +1,18 @@
+{"intents": [
+        {"tag": "selamlasma",
+         "responses": ["Sizi dinliyorum.","Dinlemekteyim","Dile benden ne dilersen","Ne istemiştiniz?","Teşekkürler. Dinliyorum.","Efendim","Buyrun","İyiyim, sen nasılsın?","Merhaba, sana nasıl yardımcı olabilirim?"]
+        },
+		{"tag": "agno",
+         "responses": [ "Öğrencinin öğrenime başladığı andan itibaren, tamamlamış olduğu yarıyıl da dahil olmak üzere almış olduğu tüm derslerin katılımıyla elde edilen ve başarısını belirleyen not ortalamasıdır."]
+        },
+		{"tag": "ders kayit",
+		"responses": [ "Ders kaydı Üniversitede öğrenim görecek tüm öğrencilerin, ilgili dönemde almaları gereken ders/dersleri, öğrenci bilgi sistemi üzerinden seçerek, danışmanına onaylatmasıdır. Bu işlemi tüm öğrencilerin yapması zorunludur." ]
+		},
+		{"tag": "etu genel",
+         "responses": ["Staj, Yaz okulu ve UBYS ile ilgili bütün bilgilere erzurum.edu.tr & ubys.erzurum.edu.tr adresinden ulaşabilirsiniz."]
+        },
+		{"tag": "kapanis",
+         "responses": ["Görüşürüz", "Tekrar görüşmek üzere","Kendine iyi bak","İyi günler","Güzel sohbetti her şey için teşekkürler.","Çok özletme kendini, yine gel."]
+        }
+ ]
+}
