@@ -2,14 +2,14 @@ html, body {
   background: #efefef;      
   height:100%;  
 }
-#center-text {          
+#center-text {
   display: flex;
   flex: 1;
-  flex-direction:column; 
+  flex-direction:column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   height:100%;
-  
+
 }
 #chat-circle {
   position: fixed;
@@ -17,7 +17,7 @@ html, body {
   right: 50px;
   background: #5A5EB9;
   width: 80px;
-  height: 80px;  
+  height: 80px;
   border-radius: 50%;
   color: white;
   padding: 28px;
@@ -51,13 +51,14 @@ html, body {
   background: #efefef;
   position:fixed;
   right:30px;
-  bottom:50px;  
+  bottom:50px;
   width:350px;
   max-width: 85vw;
   max-height:100vh;
-  border-radius:5px;  
-/*   box-shadow: 0px 5px 35px 9px #464a92; */
-  box-shadow: 0px 5px 35px 9px #ccc;
+  border-radius:5px;
+
+
+
 }
 .chat-box-toggle {
   float:right;
@@ -68,17 +69,17 @@ html, body {
   background: #5A5EB9;
   height:70px;
   border-top-left-radius:5px;
-  border-top-right-radius:5px; 
+  border-top-right-radius:5px;
   color:white;
   text-align:center;
   font-size:20px;
   padding-top:17px;
 }
 .chat-box-body {
-  position: relative;  
-  height:370px;  
+  position: relative;
+  height:370px;
   height:auto;
-  border:1px solid #ccc;  
+  border:1px solid #ccc;
   overflow: hidden;
 }
 .chat-box-body:after {
@@ -91,13 +92,13 @@ html, body {
   right: 0;
   height:100%;
   position: absolute;
-  z-index: -1;   
+  z-index: -1;
 }
 #chat-input {
   background: #f4f7f9;
-  width:100%; 
+  width:100%;
   position:relative;
-  height:47px;  
+  height:47px;
   padding-top:10px;
   padding-right:50px;
   padding-bottom:10px;
@@ -110,7 +111,7 @@ html, body {
   border-top:none;
   border-bottom-right-radius:5px;
   border-bottom-left-radius:5px;
-  overflow:hidden;  
+  overflow:hidden;
 }
 .chat-input > form {
     margin-bottom: 0;
@@ -127,7 +128,7 @@ html, body {
 #chat-input:-moz-placeholder { /* Firefox 18- */
   color: #ccc;
 }
-.chat-submit {  
+.chat-submit {
   position:absolute;
   bottom:3px;
   right:10px;
@@ -137,10 +138,10 @@ html, body {
   border-radius:50%;
   color:#5A5EB9;
   width:35px;
-  height:35px;  
+  height:35px;
 }
 .chat-logs {
-  padding:15px; 
+  padding:15px;
   height:370px;
   overflow-y:scroll;
 }
@@ -153,7 +154,7 @@ html, body {
 
 .chat-logs::-webkit-scrollbar
 {
-	width: 5px;  
+	width: 5px;
 	background-color: #F5F5F5;
 }
 
@@ -186,19 +187,19 @@ html, body {
 }
 .cm-msg-text {
   background:white;
-  padding:10px 15px 10px 15px;  
+  padding:10px 15px 10px 15px;
   color:#666;
   max-width:75%;
   float:left;
-  margin-left:10px; 
+  margin-left:10px;
   position:relative;
   margin-bottom:20px;
   border-radius:30px;
 }
 .chat-msg {
-  clear:both;    
+  clear:both;
 }
-.chat-msg.self > .cm-msg-text {  
+.chat-msg.self > .cm-msg-text {
   float:right;
   margin-right:10px;
   background: #5A5EB9;

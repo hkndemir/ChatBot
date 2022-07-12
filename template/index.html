@@ -7,19 +7,20 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="../static/style.css">
 </head>
-<body>
+<body style="background:url({{ imag1 }});  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
 <div id="center-text">
-    <h2>ChatBox UI</h2>
-    <p>Message send and scroll to bottom enabled </p>
   </div> 
 <div id="body"> 
 <div id="chat-circle" class="btn btn-raised">
         <div id="chat-overlay"></div>
-		    <i class="material-icons">speaker_phone</i>
-	</div> 
+<span><img style="    width: 100%;
+    height: 100%;" src="{{ imag }}"></span>
+	</div>
   <div class="chat-box">
     <div class="chat-box-header">
-      ChatBot
+      H&M BOT
       <span class="chat-box-toggle"><i class="material-icons">close</i></span>
     </div>
     <div class="chat-box-body">
@@ -31,7 +32,7 @@
     </div>
     <div class="chat-input">      
       <form>
-        <input type="text" id="chat-input" placeholder="Send a message..."/>
+        <input type="text" id="chat-input"  name="soru" placeholder="Lütfen Mesaj Giriniz.."/>
       <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
       </form>      
     </div>

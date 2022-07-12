@@ -1,3 +1,4 @@
+from urllib import request
 import numpy as np
 import pandas as pd
 import re
@@ -7,6 +8,8 @@ import torch.nn as nn
 import transformers
 import matplotlib.pyplot as plt
 from flask import Flask,render_template
+from flask_sqlalchemy import SQLAlchemy
+from flask import url_for
 from sklearn.metrics import classification_report
 #GPU'u belirtmek
 df = pd.read_excel('cb_dataset.xlsx')
@@ -127,7 +130,7 @@ cross_entropy = nn.NLLLoss(weight=weights)
 # doğrulama kaybını depolamak için boş listeler
 train_losses=[]
 # eğitim dönemi sayısı
-epochs = 10
+epochs = 1
 # Daha iyi sonuçlar elde etmek için öğrenme oranı
 lr_sch = torch.optim.lr_scheduler.StepLR(optimizer,
                                         step_size=3,
@@ -228,13 +231,31 @@ def cevap_Ver(message):
 
 
 ilkproje = Flask(__name__,template_folder='template',static_folder='static')
+ilkproje.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345@localhost/ChatBot'
+ilkproje.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+ilkproje.secret_key = 'secret string'
+db = SQLAlchemy(ilkproje)
+class Chat(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    soru = db.Column(db.String(500), nullable=False)
+    konu = db.Column(db.String(500), nullable=False)
+
+    def __init__(self, soru, konu):
+        self.soru = soru
+        self.konu = konu
 @ilkproje.route('/')
 def index():
-   return render_template('index.html')
-
+   imag = url_for('static', filename='logo-icon.svg')
+   imag1 = url_for('static', filename='page-bg.jpg')
+   return render_template('index.html', imag=imag,imag1=imag1)
 @ilkproje.route("/Api/<string:mesaj>")
 def anasayfa(mesaj:str):
+    konu=tahmin_Et(mesaj)
+    entry = Chat(mesaj, konu)
+    db.session.add(entry)
+    db.session.commit()
     mesaj1 = cevap_Ver(mesaj)
     return mesaj1
 if __name__ == '__main__':
+    db.create_all()
     ilkproje.run(debug=False)
